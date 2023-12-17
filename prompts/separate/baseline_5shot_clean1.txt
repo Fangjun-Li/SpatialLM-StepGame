@@ -1,0 +1,33 @@
+Given a story about spatial relations among objects, answer the relation between two queried objects. Possible relations are: overlap, above, below, left, right, upper-left, upper-right, lower-left, and lower-right. If a sentence in the story is describing clock-wise information, then 12 denotes above, 1 and 2 denote upper-right, 3 denotes right, 4 and 5 denote lower-right, 6 denotes below, 7 and 8 denote lower-left, 9 denote left, 10 and 11 denote upper-left. If the sentence is describing cardinal directions, then north denotes above, east denotes right, south denotes below, and west denotes left.
+
+Story:
+X is to the left of K and is on the same horizontal plane.
+What is the relation of the agent X to the agent K?
+Answer: left
+
+
+Story:
+G is at the 6 o'clock position relative to R.
+What is the relation of the agent G to the agent R?
+Answer: below
+
+
+Story:
+If H is the center of a clock face, B is located between 10 and 11.
+What is the relation of the agent B to the agent H?
+Answer: upper-left
+
+
+Story:
+S is directly south east of N.
+What is the relation of the agent N to the agent S?
+Answer: upper-left
+
+Story:
+The object Z is positioned above and to the left of object X.
+What is the relation of the agent X to the agent Z?
+Answer: lower-right
+
+Story:
+[INPUT]
+Answer:

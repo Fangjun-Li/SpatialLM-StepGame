@@ -1,0 +1,70 @@
+Given a story about spatial relations among objects, answer the relation between two queried objects. Possible relations are: overlap, above, below, left, right, upper-left, upper-right, lower-left, and lower-right. If a sentence in the story is describing clock-wise information, then 12 denotes above, 1 and 2 denote upper-right, 3 denotes right, 4 and 5 denote lower-right, 6 denotes below, 7 and 8 denote lower-left, 9 denote left, 10 and 11 denote upper-left. If the sentence is describing cardinal directions, then north denotes above, east denotes right, south denotes below, and west denotes left.
+
+Story:
+P is sitting at the top position to Z.
+C is at the 3 o'clock position relative to T.
+R is above M.
+B is above Z at 10 o'clock.
+L is diagonally below A to the left at a 45 degree angle.
+M is at the 12 o'clock position relative to O.
+R is diagonally below P to the left at a 45 degree angle.
+O is above A.
+B and C are in a vertical line with C below B.
+What is the relation of the agent R to the agent L?
+Answer: upper-right
+
+Story:
+B is on the top side to Q.
+I is at the 9 o'clock position relative to A.
+I is above Q at 2 o'clock.
+X is positioned down and to the left of A.
+Z is on the left side of and below B.
+Object O is above object K and to the left of it, too.
+X is placed at the upper right of R.
+Z is sitting at the upper right position to T.
+O is on the right and R is on the left.
+What is the relation of the agent T to the agent B?
+Answer: lower-left
+
+Story:
+B is over there and T is on the left.
+E is below M at 4 o'clock.
+S and W are parallel, and S on the left of W.
+S is at F’s 9 o'clock.
+F is at the 3 o'clock position relative to Y.
+G and W are side by side with G to the left and W to the right.
+O is sitting in the left direction of G.
+The object labeled Y is positioned to the right of the object labeled T.
+B is above E and to the left of E.
+What is the relation of the agent W to the agent F?
+Answer: overlap
+
+Story:
+P is over there and E is on the right of it.
+C is on the lower left of M.
+A is to the left of B.
+Z is above C.
+Z is sitting at the 3:00 position to A.
+L is at the bottom of B.
+P and Q are parallel, and P is to the left of Q.
+Q is at a 45 degree angle to L, in the upper righthand corner.
+U and E are in a vertical line with U on top.
+What is the relation of the agent P to the agent M?
+Answer: left
+
+Story:
+G and E are in a vertical line with E below G.
+A is on the lower left of X.
+Y is diagonally right and above U.
+I is on top of C.
+V is on the left side of and below C.
+U is positioned above V.
+I is above A with a small gap between them.
+K is at a 45 degree angle to E, in the upper righthand corner.
+K is south east of X.
+What is the relation of the agent K to the agent G?
+Answer: right
+
+Story:
+[INPUT]
+Answer:

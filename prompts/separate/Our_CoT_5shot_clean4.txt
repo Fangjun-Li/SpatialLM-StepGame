@@ -1,0 +1,80 @@
+Given a story about spatial relations among objects, answer the relation between two queried objects. Possible relations are: overlap, above, below, left, right, upper-left, upper-right, lower-left, and lower-right. If a sentence in the story is describing clock-wise information, then 12 denotes above, 1 and 2 denote upper-right, 3 denotes right, 4 and 5 denote lower-right, 6 denotes below, 7 and 8 denote lower-left, 9 denote left, 10 and 11 denote upper-left. If the sentence is describing cardinal directions, then north denotes above, east denotes right, south denotes below, and west denotes left. In all the spatial relations, assume that all agents occupy a position on a grid point of equally spaced points in the vertical and horizontal directions and that agents occupy the nearest grid point consistent with the spatial relation. The offsets of 9 spacial relations: offset(overlap) = (0,0); offset(above) = (0,1); offset(below) = (0,-1); offset(left) = (-1,0); offset(right) = (1,0); offset(upper-left) = (-1,1); offset(upper-right) = (1,1); offset(lower-left) = (-1,-1); offset(lower-right) = (1,-1).
+
+
+Story:
+1. C and M are both there with the object C above the object M.
+2. Z is at the bottom and Y is on the top.
+3. Z is at a 45 degree angle to M, in the upper lefthand corner.
+4. Y is placed at the lower left of G.
+What is the relation of the agent Z to the agent C?
+Reasoning:
+Let's suppose Z is at (0,0). We can connect Z and C using the relations given in the story.
+Start with Z. According to 3, "Z is at a 45 degree angle to M, in the upper lefthand corner." This means M is to the lower-right of Z. M= Z+ offset(lower-right) = (0,0)+(1,-1)=(1,-1). Therefore, M is at (1,-1).
+Then search for M. According to 1, "C and M are both there with the object C above the object M." This means C is above M. C= M+ offset(above) = (1,-1)+(0,1)=(1,0). Therefore, C is at (1,0).
+We've reached C. So, considering Z(0,0) and C(1,0), Z is to the left of C.
+Answer: left
+
+
+Story:
+1. O is positioned in the lower left corner of Z.
+2. Z is sitting at the 9:00 position of L.
+3. L presents right to V.
+4. P is on the same horizontal plane directly left to O.
+What is the relation of the agent P to the agent V?
+Reasoning:
+Let's suppose P is at (0,0). We can connect P and V using the relations given in the story.
+Start with P. According to 4, "P is on the same horizontal plane directly left to O." This means O is to the right of P. O= P+ offset(right) = (0,0)+(1,0)=(1,0). Therefore, O is at (1,0).
+Then search for O. According to 1, "O is positioned in the lower left corner of Z." This means Z is to the upper-right of O. Z= O+ offset(upper-right) = (1,0)+(1,1)=(2,1). Therefore, Z is at (2,1).
+Then search for Z. According to 2, "Z is sitting at the 9:00 position of L." Considering the clock-wise information, 9 denotes left, this means L is to the right of Z. L= Z+ offset(right) = (2,1)+(1,0)=(3,1). Therefore, L is at (3,1).
+Then search for L. According to 3, "L presents right to V." This means V is to the left of L. V= L+ offset(left) = (3,1)+(-1,0)=(2,1). Therefore, V is at (2,1).
+We've reached V. So, considering P(0,0) and V(2,1), P is to the lower-left of V.
+Answer: lower-left
+
+
+Story:
+1. X is diagonally right and above O.
+2. A is directly south west of X.
+3. M is diagonally above Q to the right at a 45 degree.
+4. O is on top of M.
+What is the relation of the agent Q to the agent A?
+Reasoning:
+Let's suppose Q is at (0,0). We can connect Q and A using the relations given in the story.
+Start with Q. According to 3, "M is diagonally above Q to the right at a 45 degree." This means M is to the upper-right of Q. M= Q+ offset(upper-right) = (0,0)+(1,1)=(1,1). Therefore, M is at (1,1).
+Then search for M. According to 4, "O is on top of M." This means O is above M. O= M+ offset(above) = (1,1)+(0,1)=(1,2). Therefore, O is at (1,2).
+Then search for O. According to 1, "X is diagonally right and above O." This means X is to the upper-right of O. X= O+ offset(upper-right) = (1,2)+(1,1)=(2,3). Therefore, X is at (2,3).
+Then search for X. According to 2, "A is directly south west of X." Considering the cardinal directions, south west denotes lower-left, this means A is to the lower-left of X. A= X+ offset(lower-left) = (2,3)+(-1,-1)=(1,2). Therefore, A is at (1,2).
+We've reached A. So, considering Q(0,0) and A(1,2), Q is to the lower-left of A.
+Answer: lower-left
+
+
+Story:
+1. S is on the right side to B.
+2. R is over T.
+3. K and B are in a horizontal line with B on the right.
+4. T is there and K is at the 5 position of a clock face.
+What is the relation of the agent T to the agent R?
+Reasoning:
+Let's suppose T is at (0,0). We can connect T and R using the relations given in the story.
+Start with T. According to 2, "R is over T." This means R is above T. R= T+ offset(above) = (0,0)+(0,1)=(0,1). Therefore, R is at (0,1).
+We've reached R. So, considering T(0,0) and R(0,1), T is below R.
+Answer: below
+
+
+Story:
+1. N is over there and O is at the bottom of it.
+2. F is upper right to K.
+3. O is over there and K is on the top of it.
+4. F presents upper right to H.
+What is the relation of the agent H to the agent N?
+Reasoning:
+Let's suppose H is at (0,0). We can connect H and N using the relations given in the story.
+Start with H. According to 4, "F presents upper right to H." This means F is at the upper-right of H. F= H+ offset(upper-right) = (0,0)+(1,1)=(1,1). Therefore, F is at (1,1).
+Then search for F. According to 2, "F is upper right to K." This means K is to the lower-left of F. K= F+ offset(lower-left) = (1,1)+(-1,-1)=(0,0). Therefore, K is at (0,0).
+Then search for K. According to 3, "O is over there and K is on the top of it." This means O is below K. O= K+ offset(below) = (0,0)+(0,-1)=(0,-1). Therefore, O is at (0,-1).
+Then search for O. According to 1, "N is over there and O is at the bottom of it." This means N is above O. N= O+ offset(above) = (0,-1)+(0,1)=(0,0). Therefore, N is at (0,0).
+We've reached N. So, considering H(0,0) and N(0,0), H and N overlap.
+Answer: overlap
+
+
+Story:
+[INPUT]

@@ -1,0 +1,50 @@
+Given a story about spatial relations among objects, answer the relation between two queried objects. Possible relations are: overlap, above, below, left, right, upper-left, upper-right, lower-left, and lower-right. If a sentence in the story is describing clock-wise information, then 12 denotes above, 1 and 2 denote upper-right, 3 denotes right, 4 and 5 denote lower-right, 6 denotes below, 7 and 8 denote lower-left, 9 denote left, 10 and 11 denote upper-left. If the sentence is describing cardinal directions, then north denotes above, east denotes right, south denotes below, and west denotes left.
+
+Story:
+Q is to the right of O and is on the same horizontal plane.
+Q is slightly off center to the top left and M is slightly off center to the bottom right.
+X and E are next to each other with X on the top and E at the bottom.
+O is sitting at the upper right position to E.
+W is on the right side and below M.
+What is the relation of the agent W to the agent E?
+Answer: lower-right
+
+Story:
+Z and E are horizontal and Z is to the left of E.
+S is slightly off center to the top left and X is slightly off center to the bottom right.
+Z is sitting at the lower left position to H.
+X is on the right and O is on the left.
+S is there and E is at the 2 position of a clock face.
+What is the relation of the agent E to the agent X?
+Answer: above
+
+Story:
+E is diagonally above R to the right at a 45 degree.
+O is sitting in the right direction of M.
+M is south west of R.
+O is on the top of V and is on the same vertical plane.
+N is below E at 4 o'clock.
+What is the relation of the agent R to the agent V?
+Answer: above
+
+Story:
+G is above and to the left of N.
+C is at the 12 o'clock position relative to N.
+If C is the center of a clock face, Z is located between 2 and 3.
+Y is to the right of U horizontally.
+G is above and to the right of Y.
+What is the relation of the agent Z to the agent G?
+Answer: upper-right
+
+Story:
+Y and L are vertical and Y is below L.
+The object S is lower and slightly to the left of the object K.
+A is to the bottom left of J.
+J is there and S is at the 2 position of a clock face.
+Y is to the right of A and is on the same horizontal plane.
+What is the relation of the agent Y to the agent S?
+Answer: lower-left
+
+Story:
+[INPUT]
+Answer:

@@ -1,0 +1,111 @@
+Given a story about spatial relations among objects, answer the relation between two queried objects. Possible relations are: overlap, above, below, left, right, upper-left, upper-right, lower-left, and lower-right. If a sentence in the story is describing clock-wise information, then 12 denotes above, 1 and 2 denote upper-right, 3 denotes right, 4 and 5 denote lower-right, 6 denotes below, 7 and 8 denote lower-left, 9 denote left, 10 and 11 denote upper-left. If the sentence is describing cardinal directions, then north denotes above, east denotes right, south denotes below, and west denotes left.
+
+
+Story:
+X is to the left of K and is on the same horizontal plane.
+What is the relation of the agent X to the agent K?
+Answer: left
+
+
+Story:
+F and T are next to each other with F on the left and T on the right.
+U and F are parallel, and U is on top of F.
+What is the relation of the agent U to the agent F?
+Answer: above
+
+
+Story:
+H is above S with a small gap between them.
+S is positioned below I.
+P is on the top side to I.
+What is the relation of the agent S to the agent P?
+Answer: below
+
+
+Story:
+C and M are both there with the object C above the object M.
+Z is at the bottom and Y is on the top.
+Z is at a 45 degree angle to M, in the upper lefthand corner.
+Y is placed at the lower left of G.
+What is the relation of the agent Z to the agent C?
+Answer: left
+
+
+Story:
+Q is to the right of O and is on the same horizontal plane.
+Q is slightly off center to the top left and M is slightly off center to the bottom right.
+X and E are next to each other with X on the top and E at the bottom.
+O is sitting at the upper right position to E.
+W is on the right side and below M.
+What is the relation of the agent W to the agent E?
+Answer: lower-right
+
+
+Story:
+The object labeled Y is positioned to the left of the object labeled G.
+Z is at the bottom of B.
+B is above K with a small gap between them.
+N is at the 9 o'clock position relative to Z.
+F is to the left of K and is on the same horizontal plane.
+Y presents right to N.
+What is the relation of the agent Y to the agent B?
+Answer: below
+
+
+Story:
+Y is over there and V is at the bottom of it.
+R is diagonally left and below D.
+V is at the 6 o'clock position relative to X.
+Z is diagonally above P to the right at a 45 degree.
+N is positioned up and to the right of D.
+Object P is above object R and to the left of it, too.
+X is at Z's 6 o'clock.
+What is the relation of the agent N to the agent X?
+Answer: upper-right
+
+
+Story:
+Y is placed at the lower right of F.
+X is over there and Y is directly below it.
+I is positioned in the lower left corner of Q.
+A is north west of Q.
+The object labeled N is positioned to the right of the object labeled W.
+N and A are vertical and N is below A.
+F presents right to O.
+O is slightly off center to the top left and W is slightly off center to the bottom right.
+What is the relation of the agent Q to the agent X?
+Answer: lower-right
+
+
+Story:
+P is sitting at the top position to Z.
+C is at the 3 o'clock position relative to T.
+R is above M.
+B is above Z at 10 o'clock.
+L is diagonally below A to the left at a 45 degree angle.
+M is at the 12 o'clock position relative to O.
+R is diagonally below P to the left at a 45 degree angle.
+O is above A.
+B and C are in a vertical line with C below B.
+What is the relation of the agent R to the agent L?
+Answer: upper-right
+
+
+Story:
+B is at Z's 12 o'clock.
+Y is on the top and W is at the bottom.
+H is sitting in the left direction of Q.
+Z is under H.
+A is at the 3 o'clock position relative to X.
+W is over there with J above.
+N is to the right of M and is on the same horizontal plane.
+B is placed at the lower right of Y.
+If A is the center of a clock face, M is located between 2 and 3.
+X is to the right of Q horizontally.
+What is the relation of the agent J to the agent Y?
+Answer: overlap
+
+
+Story:
+[INPUT]
+Answer:

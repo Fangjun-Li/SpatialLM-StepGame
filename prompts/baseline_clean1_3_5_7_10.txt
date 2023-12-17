@@ -1,0 +1,57 @@
+Given a story about spatial relations among objects, answer the relation between two queried objects. Possible relations are: overlap, above, below, left, right, upper-left, upper-right, lower-left, and lower-right. If a sentence in the story is describing clock-wise information, then 12 denotes above, 1 and 2 denote upper-right, 3 denotes right, 4 and 5 denote lower-right, 6 denotes below, 7 and 8 denote lower-left, 9 denote left, 10 and 11 denote upper-left. If the sentence is describing cardinal directions, then north denotes above, east denotes right, south denotes below, and west denotes left.
+
+
+Story:
+X is to the left of K and is on the same horizontal plane.
+What is the relation of the agent X to the agent K?
+Answer: left
+
+
+Story:
+H is above S with a small gap between them.
+S is positioned below I.
+P is on the top side to I.
+What is the relation of the agent S to the agent P?
+Answer: below
+
+
+Story:
+Q is to the right of O and is on the same horizontal plane.
+Q is slightly off center to the top left and M is slightly off center to the bottom right.
+X and E are next to each other with X on the top and E at the bottom.
+O is sitting at the upper right position to E.
+W is on the right side and below M.
+What is the relation of the agent W to the agent E?
+Answer: lower-right
+
+
+Story:
+Y is over there and V is at the bottom of it.
+R is diagonally left and below D.
+V is at the 6 o'clock position relative to X.
+Z is diagonally above P to the right at a 45 degree.
+N is positioned up and to the right of D.
+Object P is above object R and to the left of it, too.
+X is at Z's 6 o'clock.
+What is the relation of the agent N to the agent X?
+Answer: upper-right
+
+
+Story:
+B is at Z's 12 o'clock.
+Y is on the top and W is at the bottom.
+H is sitting in the left direction of Q.
+Z is under H.
+A is at the 3 o'clock position relative to X.
+W is over there with J above.
+N is to the right of M and is on the same horizontal plane.
+B is placed at the lower right of Y.
+If A is the center of a clock face, M is located between 2 and 3.
+X is to the right of Q horizontally.
+What is the relation of the agent J to the agent Y?
+Answer: overlap
+
+
+Story:
+[INPUT]
+Answer:

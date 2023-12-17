@@ -1,0 +1,107 @@
+Given a story about spatial relations among objects, answer the relation between two queried objects. Possible relations are: overlap, above, below, left, right, upper-left, upper-right, lower-left, and lower-right. If a sentence in the story is describing clock-wise information, then 12 denotes above, 1 and 2 denote upper-right, 3 denotes right, 4 and 5 denote lower-right, 6 denotes below, 7 and 8 denote lower-left, 9 denote left, 10 and 11 denote upper-left. If the sentence is describing cardinal directions, then north denotes above, east denotes right, south denotes below, and west denotes left. In all the spatial relations, assume that all agents occupy a position on a grid point of equally spaced points in the vertical and horizontal directions and that agents occupy the nearest grid point consistent with the spatial relation. The offsets of 9 spacial relations: offset(overlap) = (0,0); offset(above) = (0,1); offset(below) = (0,-1); offset(left) = (-1,0); offset(right) = (1,0); offset(upper-left) = (-1,1); offset(upper-right) = (1,1); offset(lower-left) = (-1,-1); offset(lower-right) = (1,-1).
+
+
+Story:
+1. Y is placed at the lower right of F.
+2. X is over there and Y is directly below it.
+3. I is positioned in the lower left corner of Q.
+4. A is north west of Q.
+5. The object labeled N is positioned to the right of the object labeled W.
+6. N and A are vertical and N is below A.
+7. F presents right to O.
+8. O is slightly off center to the top left and W is slightly off center to the bottom right.
+What is the relation of the agent Q to the agent X?
+Reasoning:
+Let's suppose Q is at (0,0). We can connect Q and X using the relations given in the story.
+Start with Q. According to 4, "A is north west of Q." Considering the cardinal directions, north west denotes upper-left. This means A is to the upper-left of Q. A= Q+ offset(upper-left) = (0,0)+(-1,1)=(-1,1). Therefore, A is at (-1,1).
+Then search for A. According to 6, "N and A are vertical and N is below A." This means N is below A. N= A+ offset(below) = (-1,1)+(0,-1)=(-1,0). Therefore, N is at (-1,0).
+Then search for N. According to 5, "The object labeled N is positioned to the right of the object labeled W." This means W is to the left of N. W= N+ offset(left) = (-1,0)+(-1,0)=(-2,0). Therefore, W is at (-2,0).
+Then search for W. According to 8, "O is slightly off center to the top left and W is slightly off center to the bottom right." This means O is to the upper-left of W. O= W+ offset(upper-left) = (-2,0)+(-1,1)=(-3,1). Therefore, O is at (-3,1).
+Then search for O. According to 7, "F presents right to O." This means F is to the right of O. F= O+ offset(right) = (-3,1)+(1,0)=(-2,1). Therefore, F is at (-2,1).
+Then search for F. According to 1, "Y is placed at the lower right of F." This means Y is to the lower-right of F. Y= F+ offset(lower-right) = (-2,1)+(1,-1)=(-1,0). Therefore, Y is at (-1,0).
+Then search for Y. According to 2, "X is over there and Y is directly below it." This means X is above Y. X= Y+ offset(above) = (-1,0)+(0,1)=(-1,1). Therefore, X is at (-1,1).
+We've reached X. So, considering Q(0,0) and X(-1,1), Q is to the lower-right of X.
+Answer: lower-right
+
+
+Story:
+1. Q and P are in a vertical line with Q on top.
+2. C is on top of L.
+3. If N is the center of a clock face, X is located between 4 and 5.
+4. P and N are side by side with P on the top and N at the bottom.
+5. I is sitting in the right direction of R.
+6. The object Y is upper and slightly to the right of the object Q.
+7. C is below and to the right of R.
+8. The objects Y and I are over there. The object Y is lower and slightly to the left of the object I.
+What is the relation of the agent X to the agent C?
+Reasoning:
+Let's suppose X is at (0,0). We can connect X and C using the relations given in the story.
+Start with X. According to 3, "If N is the center of a clock face, X is located between 4 and 5." Considering the clock-wise information, between 4 and 5 denotes lower-right. This means N is to the upper-left of X. N= X+ offset(upper-left) = (0,0)+(-1,1)=(-1,1). Therefore, N is at (-1,1).
+Then search for N. According to 4, "P and N are side by side with P on the top and N at the bottom." This means P is above N. P= N+ offset(above) = (-1,1)+(0,1)=(-1,2). Therefore, P is at (-1,2).
+Then search for P. According to 1, "Q and P are in a vertical line with Q on top." This means Q is above P. Q= P+ offset(above) = (-1,2)+(0,1)=(-1,3). Therefore, Q is at (-1,3).
+Then search for Q. According to 6, "The object Y is upper and slightly to the right of the object Q." This means Y is to the upper-right of Q. Y= Q+ offset(upper-right) = (-1,3)+(1,1)=(0,4). Therefore, Y is at (0,4).
+Then search for Y. According to 8, "The objects Y and I are over there. The object Y is lower and slightly to the left of the object I." This means I is to the upper-right of Y. I= Y+ offset(upper-right) = (0,4)+(1,1)=(1,5). Therefore, I is at (1,5).
+Then search for I. According to 5, "I is sitting in the right direction of R." This means R is to the left of I. R= I+ offset(left) = (1,5)+(-1,0)=(0,5). Therefore, R is at (0,5).
+Then search for R. According to 7, "C is below and to the right of R." This means C is to the lower-right of R. C= R+ offset(lower-right) = (0,5)+(1,-1)=(1,4). Therefore, C is at (1,4).
+We've reached C. So, considering X(0,0) and C(1,4), X is to the lower-left of C.
+Answer: lower-left
+
+
+Story:
+1. C is below and to the left of Y.
+2. X and W are side by side with X to the right and W to the left.
+3. Object Q is above object O and to the left of it, too.
+4. J is to the upper left of Q.
+5. C and J are parallel, and C on the left of J.
+6. W is at the bottom of R vertically.
+7. The object Z is positioned directly above the object O.
+8. Z is on the same vertical plane directly below R.
+What is the relation of the agent Y to the agent Q?
+Reasoning:
+Let's suppose Y is at (0,0). We can connect Y and Q using the relations given in the story.
+Start with Y. According to 1, "C is below and to the left of Y." This means C is to the lower-left of Y. C= Y+ offset(lower-left) = (0,0)+(-1,-1)=(-1,-1). Therefore, C is at (-1,-1).
+Then search for C. According to 5, "C and J are parallel, and C on the left of J." This means J is to the right of C. J= C+ offset(right) = (-1,-1)+(1,0)=(0,-1). Therefore, J is at (0,-1).
+Then search for J. According to 4, "J is to the upper left of Q." This means Q is to the lower-right of J. Q= J+ offset(lower-right) = (0,-1)+(1,-1)=(1,-2). Therefore, Q is at (1,-2).
+We've reached Q. So, considering Y(0,0) and Q(1,-2), Y is to the upper-left of Q.
+Answer: upper-left
+
+
+Story:
+1. W and Z are parallel, and W is to the left of Z.
+2. B and K are parallel, and B is under K.
+3. L is on the right side and below C.
+4. B is below T at 4 o'clock.
+5. F is above T and to the right of T.
+6. Z is over there and C is on the left.
+7. I presents over K.
+8. F is to the top right of L.
+What is the relation of the agent T to the agent F?
+Reasoning:
+Let's suppose T is at (0,0). We can connect T and F using the relations given in the story.
+Start with T. According to 5, "F is above T and to the right of T." This means F is to the upper-right of T. F= T+ offset(upper-right) = (0,0)+(1,1)=(1,1). Therefore, F is at (1,1).
+We've reached F. So, considering T(0,0) and F(1,1), T is to the lower-left of F.
+Answer: lower-left
+
+
+Story:
+1. B is positioned above O and to the right.
+2. X is upper right to O.
+3. J is on the same vertical plane directly above H.
+4. V is below Q with a small gap between them.
+5. Q is over there and L is on the top of it.
+6. X is positioned above N and to the right.
+7. N is placed in the left direction of L.
+8. H is positioned below and to the right of V.
+What is the relation of the agent Q to the agent O?
+Reasoning:
+Let's suppose Q is at (0,0). We can connect Q and O using the relations given in the story.
+Start with Q. According to 5, "Q is over there and L is on the top of it." This means L is above Q. L= Q+ offset(above) = (0,0)+(0,1)=(0,1). Therefore, L is at (0,1).
+Then search for L. According to 7, "N is placed in the left direction of L." This means N is to the left of L. N= L+ offset(left) = (0,1)+(-1,0)=(-1,1). Therefore, N is at (-1,1).
+Then search for N. According to 6, "X is positioned above N and to the right." This means X is to the upper-right of N. X= N+ offset(upper-right) = (-1,1)+(1,1)=(0,2). Therefore, X is at (0,2).
+Then search for X. According to 2, "X is upper right to O." This means O is to the lower-left of X. O= X+ offset(lower-left) = (0,2)+(-1,-1)=(-1,1). Therefore, O is at (-1,1).
+We've reached O. So, considering Q(0,0) and O(-1,1), Q is to the lower-right of O.
+Answer: lower-right
+
+
+Story:
+[INPUT]

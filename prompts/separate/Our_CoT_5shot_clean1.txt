@@ -1,0 +1,44 @@
+Given a story about spatial relations among objects, answer the relation between two queried objects. Possible relations are: overlap, above, below, left, right, upper-left, upper-right, lower-left, and lower-right. If a sentence in the story is describing clock-wise information, then 12 denotes above, 1 and 2 denote upper-right, 3 denotes right, 4 and 5 denote lower-right, 6 denotes below, 7 and 8 denote lower-left, 9 denote left, 10 and 11 denote upper-left. If the sentence is describing cardinal directions, then north denotes above, east denotes right, south denotes below, and west denotes left. In all the spatial relations, assume that all agents occupy a position on a grid point of equally spaced points in the vertical and horizontal directions and that agents occupy the nearest grid point consistent with the spatial relation. The offsets of 9 spacial relations: offset(overlap) = (0,0); offset(above) = (0,1); offset(below) = (0,-1); offset(left) = (-1,0); offset(right) = (1,0); offset(upper-left) = (-1,1); offset(upper-right) = (1,1); offset(lower-left) = (-1,-1); offset(lower-right) = (1,-1).
+
+
+Story:
+1. X is to the left of K and is on the same horizontal plane.
+What is the relation of the agent X to the agent K?
+Reasoning:
+According to 1, "X is to the left of K and is on the same horizontal plane." This means that X is to the left of K.
+Answer: left
+
+
+Story:
+1. G is at the 6 o'clock position relative to R.
+What is the relation of the agent G to the agent R?
+Reasoning:
+According to 1, "G is at the 6 o'clock position relative to R." Considering the clock-wise information, 6 denotes below. This indicates that G is below R.
+Answer: below
+
+
+Story:
+1. If H is the center of a clock face, B is located between 10 and 11.
+What is the relation of the agent B to the agent H?
+Reasoning:
+According to 1, "If H is the center of a clock face, B is located between 10 and 11." Considering the clock-wise information, between 10 and 11 denotes upper-left. This indicates that B is in the upper-left of H.
+Answer: upper-left
+
+
+Story:
+1. S is directly south east of N.
+What is the relation of the agent N to the agent S?
+Reasoning:
+According to 1, "S is directly south east of N", considering the cardinal directions, south east denotes lower-right. S is to the upper-left of N, so N is to the upper-left of N. 
+Answer: upper-left
+
+Story:
+1. The object Z is positioned above and to the left of object X.
+What is the relation of the agent X to the agent Z?
+Reasoning:
+According to 1, "The object Z is positioned above and to the left of object X." This indicates that Z is to the upper-left of X. Therefore, from X's perspective, Z is to the upper-left and hence X is to the lower-right of Z.
+Answer: lower-right
+
+
+Story:
+[INPUT]

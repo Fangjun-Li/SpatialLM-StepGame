@@ -1,0 +1,94 @@
+Given a story about spatial relations among objects, answer the relation between two queried objects. Possible relations are: overlap, above, below, left, right, upper-left, upper-right, lower-left, and lower-right. If a sentence in the story is describing clock-wise information, then 12 denotes above, 1 and 2 denote upper-right, 3 denotes right, 4 and 5 denote lower-right, 6 denotes below, 7 and 8 denote lower-left, 9 denote left, 10 and 11 denote upper-left. If the sentence is describing cardinal directions, then north denotes above, east denotes right, south denotes below, and west denotes left. In all the spatial relations, assume that all agents occupy a position on a grid point of equally spaced points in the vertical and horizontal directions and that agents occupy the nearest grid point consistent with the spatial relation. The offsets of 9 spacial relations: offset(overlap) = (0,0); offset(above) = (0,1); offset(below) = (0,-1); offset(left) = (-1,0); offset(right) = (1,0); offset(upper-left) = (-1,1); offset(upper-right) = (1,1); offset(lower-left) = (-1,-1); offset(lower-right) = (1,-1).
+
+
+Story:
+1. Y is over there and V is at the bottom of it.
+2. R is diagonally left and below D.
+3. V is at the 6 o'clock position relative to X.
+4. Z is diagonally above P to the right at a 45 degree.
+5. N is positioned up and to the right of D.
+6. Object P is above object R and to the left of it, too.
+7. X is at Z's 6 o'clock.
+What is the relation of the agent N to the agent X?
+Reasoning:
+Let's suppose N is at (0,0). We can connect N and X using the relations given in the story.
+Start with N. According to 5, "N is positioned up and to the right of D." This means D is to the lower-left of N. D= N+ offset(lower-left) = (0,0)+(-1,-1)=(-1,-1). Therefore, D is at (-1,-1).
+Then search for D. According to 2, "R is diagonally left and below D." This means R is to the lower-left of D. R= D+ offset(lower-left) = (-1,-1)+(-1,-1)=(-2,-2). Therefore, R is at (-2,-2).
+Then search for R. According to 6, "Object P is above object R and to the left of it, too." This means P is to the upper-left of R. P= R+ offset(upper-left) = (-2,-2)+(-1,1)=(-3,-1). Therefore, P is at (-3,-1).
+Then search for P. According to 4, "Z is diagonally above P to the right at a 45 degree." This means Z is to the upper-right of P. Z= P+ offset(upper-right) = (-3,-1)+(1,1)=(-2,0). Therefore, Z is at (-2,0).
+Then search for Z. According to 7, "X is at Z's 6 o'clock." Considering the clock-wise information, 6 o'clock denotes below. This means X is below Z. X= Z+ offset(below) = (-2,0)+(0,-1)=(-2,-1). Therefore, X is at (-2,-1).
+We've reached X. So, considering N(0,0) and X(-2,-1), N is to the upper-right of X.
+Answer: upper-right
+
+
+Story:
+1. Z is on the right side and top of N.
+2. F is to the left of Y and is on the same horizontal plane.
+3. Z is to the left of K horizontally.
+4. F is positioned below and to the right of K.
+5. G is at W's 6 o'clock.
+6. The object G is positioned below and to the right of the object N.
+7. Y is upper right to R.
+What is the relation of the agent G to the agent W?
+Reasoning:
+Let's suppose G is at (0,0). We can connect G and W using the relations given in the story.
+Start with G. According to 5, "G is at W's 6 o'clock." Considering the clock-wise information, 6 o'clock denotes below. This means W is above G. W= G+ offset(above) = (0,0)+(0,1)=(0,1). Therefore, W is at (0,1).
+We've reached W. So, considering G(0,0) and W(0,1), G is below W.
+Answer: below
+
+
+Story:
+1. W is positioned in the top left corner of T.
+2. K is placed at the upper right of X.
+3. A is placed at the lower left of E.
+4. A is sitting at the 6:00 position to W.
+5. T presents lower left to Q.
+6. E is at a 45 degree angle to X, in the upper lefthand corner.
+7. R and K are vertical and R is above K.
+What is the relation of the agent R to the agent E?
+Reasoning:
+Let's suppose R is at (0,0). We can connect R and E using the relations given in the story.
+Start with R. According to 7, "R and K are vertical and R is above K." This means K is below R. K= R+ offset(below) = (0,0)+(0,-1)=(0,-1). Therefore, K is at (0,-1).
+Then search for K. According to 2, "K is placed at the upper right of X." This means X is to the lower-left of K. X= K+ offset(lower-left) = (0,-1)+(-1,-1)=(-1,-2). Therefore, X is at (-1,-2).
+Then search for X. According to 6, "E is at a 45 degree angle to X, in the upper lefthand corner." Here, the term "upper lefthand corner" could be interpreted as "upper-left". This means E is to the upper-left of X. E= X+ offset(upper-left) = (-1,-2)+(-1,1)=(-2,-1). Therefore, E is at (-2,-1).
+We've reached E. So, considering R(0,0) and E(-2,-1), R is to the upper-right of E.
+Answer: upper-right
+
+
+Story:
+1. U is positioned above and to the left of F.
+2. K is sitting in the right direction of J.
+3. M is above J with a small gap between them.
+4. Q is sitting at the 3:00 position to F.
+5. M is to the top of N vertically.
+6. U is sitting at the 6:00 position to N.
+7. W presents left to Q.
+What is the relation of the agent M to the agent Q?
+Reasoning:
+Let's suppose M is at (0,0). We can connect M and Q using the relations given in the story.
+Start with M. According to 5, "M is to the top of N vertically." This means N is below M. N= M+ offset(below) = (0,0)+(0,-1)=(0,-1). Therefore, N is at (0,-1).
+Then search for N. According to 6, "U is sitting at the 6:00 position to N." Considering the clock-wise information, 6 o'clock denotes below. This means U is below N. U= N+ offset(below) = (0,-1)+(0,-1)=(0,-2). Therefore, U is at (0,-2).
+Then search for U. According to 1, "U is positioned above and to the left of F." This means F is to the lower-right of U. F= U+ offset(lower-right) = (0,-2)+(1,-1)=(1,-3). Therefore, F is at (1,-3).
+Then search for F. According to 4, "Q is sitting at the 3:00 position to F." Considering the clock-wise information, 3 o'clock denotes right. This means Q is to the right of F. Q= F+ offset(right) = (1,-3)+(1,0)=(2,-3). Therefore, Q is at (2,-3).
+We've reached Q. So, considering M(0,0) and Q(2,-3), M is to the upper-left of Q.
+Answer: upper-left
+
+
+Story:
+1. P and Y are in a horizontal line with P on the left.
+2. G is to the left of Y.
+3. E is sitting at the lower left position to Q.
+4. The object G is lower and slightly to the left of the object B.
+5. J is on the left side to I.
+6. Object B is below object Q and to the right of it, too.
+7. E is on the lower left of I.
+What is the relation of the agent E to the agent Q?
+Reasoning:
+Let's suppose E is at (0,0). We can connect E and Q using the relations given in the story.
+Start with E. According to 3, "E is sitting at the lower left position to Q." This means Q is to the upper-right of E. Q= E+ offset(upper-right) = (0,0)+(1,1)=(1,1). Therefore, Q is at (1,1).
+We've reached Q. So, considering E(0,0) and Q(1,1), E is to the lower-left of Q.
+Answer: lower-left
+
+
+Story:
+[INPUT]

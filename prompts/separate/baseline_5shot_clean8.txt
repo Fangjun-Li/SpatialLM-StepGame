@@ -1,0 +1,65 @@
+Given a story about spatial relations among objects, answer the relation between two queried objects. Possible relations are: overlap, above, below, left, right, upper-left, upper-right, lower-left, and lower-right. If a sentence in the story is describing clock-wise information, then 12 denotes above, 1 and 2 denote upper-right, 3 denotes right, 4 and 5 denote lower-right, 6 denotes below, 7 and 8 denote lower-left, 9 denote left, 10 and 11 denote upper-left. If the sentence is describing cardinal directions, then north denotes above, east denotes right, south denotes below, and west denotes left.
+
+Story:
+Y is placed at the lower right of F.
+X is over there and Y is directly below it.
+I is positioned in the lower left corner of Q.
+A is north west of Q.
+The object labeled N is positioned to the right of the object labeled W.
+N and A are vertical and N is below A.
+F presents right to O.
+O is slightly off center to the top left and W is slightly off center to the bottom right.
+What is the relation of the agent Q to the agent X?
+Answer: lower-right
+
+Story:
+Q and P are in a vertical line with Q on top.
+C is on top of L.
+If N is the center of a clock face, X is located between 4 and 5.
+P and N are side by side with P on the top and N at the bottom.
+I is sitting in the right direction of R.
+The object Y is upper and slightly to the right of the object Q.
+C is below and to the right of R.
+The objects Y and I are over there. The object Y is lower and slightly to the left of the object I.
+What is the relation of the agent X to the agent C?
+Answer: lower-left
+
+Story:
+C is below and to the left of Y.
+X and W are side by side with X to the right and W to the left.
+Object Q is above object O and to the left of it, too.
+J is to the upper left of Q.
+C and J are parallel, and C on the left of J.
+W is at the bottom of R vertically.
+The object Z is positioned directly above the object O.
+Z is on the same vertical plane directly below R.
+What is the relation of the agent Y to the agent Q?
+Answer: upper-left
+
+Story:
+W and Z are parallel, and W is to the left of Z.
+B and K are parallel, and B is under K.
+L is on the right side and below C.
+B is below T at 4 o'clock.
+F is above T and to the right of T.
+Z is over there and C is on the left.
+I presents over K.
+F is to the top right of L.
+What is the relation of the agent T to the agent F?
+Answer: lower-left
+
+Story:
+B is positioned above O and to the right.
+X is upper right to O.
+J is on the same vertical plane directly above H.
+V is below Q with a small gap between them.
+Q is over there and L is on the top of it.
+X is positioned above N and to the right.
+N is placed in the left direction of L.
+H is positioned below and to the right of V.
+What is the relation of the agent Q to the agent O?
+Answer: lower-right
+
+Story:
+[INPUT]
+Answer:

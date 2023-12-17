@@ -1,0 +1,98 @@
+Given a story about spatial relations among objects, answer the relation between two queried objects. Possible relations are: overlap, above, below, left, right, upper-left, upper-right, lower-left, and lower-right. If a sentence in the story is describing clock-wise information, then 12 denotes above, 1 and 2 denote upper-right, 3 denotes right, 4 and 5 denote lower-right, 6 denotes below, 7 and 8 denote lower-left, 9 denote left, 10 and 11 denote upper-left. If the sentence is describing cardinal directions, then north denotes above, east denotes right, south denotes below, and west denotes left. In all the spatial relations, assume that all agents occupy a position on a grid point of equally spaced points in the vertical and horizontal directions and that agents occupy the nearest grid point consistent with the spatial relation. The offsets of 9 spacial relations: offset(overlap) = (0,0); offset(above) = (0,1); offset(below) = (0,-1); offset(left) = (-1,0); offset(right) = (1,0); offset(upper-left) = (-1,1); offset(upper-right) = (1,1); offset(lower-left) = (-1,-1); offset(lower-right) = (1,-1).
+
+
+Story:
+1. G and D are side by side with G on the top and D at the bottom.
+2. J is below and to the left of F.
+3. D is on the upper right of E.
+4. H is above and to the right of R.
+5. J is diagonally right and below O.
+6. G is over there and B is at the bottom of it.
+7. R is on the lower left of C.
+8. C is below V.
+9. E and V are horizontal and E is to the left of V.
+10. F is diagonally right and below B.
+What is the relation of the agent B to the agent D?
+Reasoning:
+Let's suppose B is at (0,0). We can connect B and D using the relations given in the story.
+Start with B. According to 6, "G is over there and B is at the bottom of it." This means G is above B. G= B+ offset(above) = (0,0)+(0,1)=(0,1). Therefore, G is at (0,1).
+Then search for G. According to 1, "G and D are side by side with G on the top and D at the bottom." This means D is below G. D= G+ offset(below) = (0,1)+(0,-1)=(0,0). Therefore, D is at (0,0).
+We've reached D. So, considering B(0,0) and D(0,0), B and D overlap.
+Answer: overlap
+
+
+Story:
+1. C is above R with a small gap between them.
+2. The objects L and Q are over there. The object L is lower and slightly to the left of the object Q.
+3. C is to the upper left of J.
+4. J is to the right of E.
+5. T and A are next to each other with T on the top and A at the bottom.
+6. G is lower right of N.
+7. G is south east of A.
+8. L is slightly off center to the top left and Y is slightly off center to the bottom right.
+9. R is to the top right of Q.
+10. If Y is the center of a clock face, T is located between 7 and 8.
+What is the relation of the agent G to the agent Q?
+Reasoning:
+Let's suppose G is at (0,0). We can connect G and Q using the relations given in the story.
+Start with G. According to 7, "G is south east of A." Considering the cardinal directions, south east denotes lower-right. This means A is to the upper-left of G. A= G+ offset(upper-left) = (0,0)+(-1,1)=(-1,1). Therefore, A is at (-1,1).
+Then search for A. According to 5, "T and A are next to each other with T on the top and A at the bottom." This means T is above A. T= A+ offset(above) = (-1,1)+(0,1)=(-1,2). Therefore, T is at (-1,2).
+Then search for T. According to 10, "If Y is the center of a clock face, T is located between 7 and 8." Considering the clock-wise information, between 7 and 8 denotes lower-left. This means Y is to the upper-right of T. Y= T+ offset(upper-right) = (-1,2)+(1,1)=(0,3). Therefore, Y is at (0,3).
+Then search for Y. According to 8, "L is slightly off center to the top left and Y is slightly off center to the bottom right." This means L is to the upper-left of Y. L= Y+ offset(upper-left) = (0,3)+(-1,1)=(-1,4). Therefore, L is at (-1,4).
+Then search for L. According to 2, "The objects L and Q are over there. The object L is lower and slightly to the left of the object Q." This means Q is to the upper-right of L. Q= L+ offset(upper-right) = (-1,4)+(1,1)=(0,5). Therefore, Q is at (0,5).
+We've reached Q. So, considering G(0,0) and Q(0,5), G is below Q.
+Answer: below  
+
+
+Story:
+1. L is to the left of Y and is on the same horizontal plane.
+2. T is on the right side to P.
+3. H is to the left of K with a small gap between them.
+4. W is placed at the lower right of J.
+5. S is on top of J.
+6. Object Z is above object D and to the left of it, too.
+7. The object D is lower and slightly to the left of the object T.
+8. If Y is the center of a clock face, H is located between 4 and 5.
+9. S is diagonally above L to the right at a 45 degree.
+10. P is at the lower side of W.
+What is the relation of the agent Y to the agent D?
+Reasoning:
+Let's suppose Y is at (0,0). We can connect Y and D using the relations given in the story.
+Start with Y. According to 1, "L is to the left of Y and is on the same horizontal plane." This means L is left of Y. L= Y+ offset(left) = (0,0)+(-1,0)=(-1,0). Therefore, L is at (-1,0).
+Then search for L. According to 9, "S is diagonally above L to the right at a 45 degree." This means S is to the upper-right of L. S= L+ offset(upper-right) = (-1,0)+(1,1)=(0,1). Therefore, S is at (0,1).
+Then search for S. According to 5, "S is on top of J." This means J is below S. J= S+ offset(below) = (0,1)+(0,-1)=(0,0). Therefore, J is at (0,0).
+Then search for J. According to 4, "W is placed at the lower right of J." This means W is to the lower-right of J. W= J+ offset(lower-right) = (0,0)+(1,-1)=(1,-1). Therefore, W is at (1,-1).
+Then search for W. According to 10, "P is at the lower side of W." This means P is below W. P= W+ offset(below) = (1,-1)+(0,-1)=(1,-2). Therefore, P is at (1,-2).
+Then search for P. According to 2, "T is on the right side to P." This means T is to the right of P. T= P+ offset(right) = (1,-2)+(1,0)=(2,-2). Therefore, T is at (2,-2).
+Then search for T. According to 7, "The object D is lower and slightly to the left of the object T." This means D is to the lower-left of T. D= T+ offset(lower-left) = (2,-2)+(-1,-1)=(1,-3). Therefore, D is at (1,-3).
+We've reached D. So, considering Y(0,0) and D(1,-3), Y is to the upper-left of D.
+Answer: upper-left
+
+Story:
+1. Q is sitting at the lower left position to U.
+2. Z is diagonally to the bottom right of S.
+3. F is directly south east of Y.
+4. S is placed in the right direction of C.
+5. R is at a 45 degree angle to Z, in the upper lefthand corner.
+6. O is at a 45 degree angle to R, in the upper righthand corner.
+7. A is at the 12 o'clock position relative to U.
+8. O is to the right of Q.
+9. If F is the center of a clock face, B is located between 4 and 5.
+10. C is diagonally right and below Y.
+What is the relation of the agent U to the agent F?
+Reasoning:
+Let's suppose U is at (0,0). We can connect U and F using the relations given in the story.
+Start with U. According to 1, "Q is sitting at the lower left position to U." This means Q is to the lower-left of U. Q= U+ offset(lower-left) = (0,0)+(-1,-1)=(-1,-1). Therefore, Q is at (-1,-1).
+Then search for Q. According to 8, "O is to the right of Q." This means O is to the right of Q. O= Q+ offset(right) = (-1,-1)+(1,0)=(0,-1). Therefore, O is at (0,-1).
+Then search for O. According to 6, "O is at a 45 degree angle to R, in the upper righthand corner." Considering this information, R is to the lower-left of O. R= O+ offset(lower-left) = (0,-1)+(-1,-1)=(-1,-2). Therefore, R is at (-1,-2).
+Then search for R. According to 5, "R is at a 45 degree angle to Z, in the upper lefthand corner." Considering this information, Z is to the lower-right of R. Z= R+ offset(lower-right) = (-1,-2)+(1,-1)=(0,-3). Therefore, Z is at (0,-3).
+Then search for Z. According to 2, "Z is diagonally to the bottom right of S." This means S is to the upper-left of Z. S= Z+ offset(upper-left) = (0,-3)+(-1,1)=(-1,-2). Therefore, S is at (-1,-2).
+Then search for S. According to 4, "S is placed in the right direction of C." This means C is to the left of S. C= S+ offset(left) = (-1,-2)+(-1,0)=(-2,-2). Therefore, C is at (-2,-2).
+Then search for C. According to 10, "C is diagonally right and below Y." This means Y is to the upper-left of C. Y= C+ offset(upper-left) = (-2,-2)+(-1,1)=(-3,-1). Therefore, Y is at (-3,-1).
+Then search for Y. According to 3, "F is directly south east of Y." Considering the cardinal directions, south east denotes lower-right. This means F is to the lower-right of Y. F= Y+ offset(lower-right) = (-3,-1)+(1,-1)=(-2,-2). Therefore, F is at (-2,-2).
+We've reached F. So, considering U(0,0) and F(-2,-2), U is to the upper-right of F.
+Answer: upper-right
+
+
+Story:
+[INPUT]

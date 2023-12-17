@@ -1,0 +1,69 @@
+Given a story about spatial relations among objects, answer the relation between two queried objects. Possible relations are: overlap, above, below, left, right, upper-left, upper-right, lower-left, and lower-right. If a sentence in the story is describing clock-wise information, then 12 denotes above, 1 and 2 denote upper-right, 3 denotes right, 4 and 5 denote lower-right, 6 denotes below, 7 and 8 denote lower-left, 9 denote left, 10 and 11 denote upper-left. If the sentence is describing cardinal directions, then north denotes above, east denotes right, south denotes below, and west denotes left. In all the spatial relations, assume that all agents occupy a position on a grid point of equally spaced points in the vertical and horizontal directions and that agents occupy the nearest grid point consistent with the spatial relation. The offsets of 9 spacial relations: offset(overlap) = (0,0); offset(above) = (0,1); offset(below) = (0,-1); offset(left) = (-1,0); offset(right) = (1,0); offset(upper-left) = (-1,1); offset(upper-right) = (1,1); offset(lower-left) = (-1,-1); offset(lower-right) = (1,-1).
+
+
+Story:
+1. H is above S with a small gap between them.
+2. S is positioned below I.
+3. P is on the top side to I.
+What is the relation of the agent S to the agent P?
+Reasoning:
+Let's suppose S is at (0,0). We can connect S and P using the relations given in the story.
+Start with S. According to 2, "S is positioned below I." This means I is above S. I= S+ offset(above) = (0,0)+(0,1)=(0,1). Therefore, I is at (0,1)
+Then search for I. According to 3, "P is on the top side to I." This means P is above I. P= I+ offset(above) = (0,1)+(0,1)=(0,2). Therefore,P is at (0,2)
+We've reached P. So, considering S(0,0) and P (0,2), S is below S.
+Answer: below
+
+
+Story:
+1. L is directly below P.
+2. P is below F at 4 o'clock.
+3. F presents left to J.
+What is the relation of the agent L to the agent J?
+Reasoning:
+Let's suppose L is at (0,0). We can connect L and J using the relations given in the story.
+Start with L. According to 1, "L is directly below P." This means P is above L. P= L+ offset(above) = (0,0)+(0,1)=(0,1). Therefore, P is at (0,1).
+Then search for P. According to 2, "P is below F at 4 o'clock." Considering the clock-wise information, 4 denotes lower-right. This means F is to the upper-left of P. F= P+ offset(upper-left) = (0,1)+(-1,1)=(-1,2). Therefore, F is at (-1,2).
+Then search for F. According to 3, "F presents left to J." This means J is to the right of F. J= F+ offset(right) = (-1,2)+(1,0)=(0,2). Therefore, J is at (0,2).
+We've reached J. So, considering L(0,0) and J(0,2), L is below J.
+Answer: below
+
+
+Story:
+1. V is diagonally left and below O.
+2. O is diagonally right and below Y.
+3. Y presents lower left to E.
+What is the relation of the agent V to the agent Y?
+Reasoning:
+Let's suppose V is at (0,0). We can connect V and Y using the relations given in the story.
+Start with V. According to 1, "V is diagonally left and below O." This means O is to the upper-right of V. O= V+ offset(upper-right) = (0,0)+(1,1)=(1,1). Therefore, O is at (1,1).
+Then search for O. According to 2, "O is diagonally right and below Y." This means Y is to the upper-left of O. Y= O+ offset(upper-left) = (1,1)+(-1,1)=(0,2). Therefore, Y is at (0,2).
+We've reached Y. So, considering V(0,0) and Y(0,2), V is below Y.
+Answer: below
+
+
+Story:
+1. P is on the lower right of T.
+2. P is at K's 12 o'clock.
+3. T is to the top right of O.
+What is the relation of the agent O to the agent T?
+Reasoning:
+Let's suppose O is at (0,0). We can connect O and T using the relations given in the story.
+Start with O. According to 3, "T is to the top right of O." This means T is at the upper-right of O. T= O+ offset(upper-right) = (0,0)+(1,1)=(1,1). Therefore, T is at (1,1).
+We've reached T. So, considering O(0,0) and T(1,1), O is at the lower-left of T.
+Answer: lower-left
+
+
+Story:
+1. The object G and T are there. The object T is above and slightly to the left of the object G.
+2. I is on the right and O is on the left.
+3. O is at a 45 degree angle to T, in the lower righthand corner.
+What is the relation of the agent T to the agent O?
+Reasoning:
+Let's suppose T is at (0,0). We can connect T and O using the relations given in the story.
+Start with T. According to 3, "O is at a 45 degree angle to T, in the lower righthand corner." This means O is at the lower-right of T. O= T+ offset(lower-right) = (0,0)+(1,-1)=(1,-1). Therefore, O is at (1,-1).
+We've reached O. So, considering T(0,0) and O(1,-1), T is to the upper-left of O.
+Answer: upper-left
+
+
+Story:
+[INPUT]

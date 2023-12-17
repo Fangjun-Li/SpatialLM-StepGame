@@ -1,0 +1,55 @@
+Given a story about spatial relations among objects, answer the relation between two queried objects. Possible relations are: overlap, above, below, left, right, upper-left, upper-right, lower-left, and lower-right. If a sentence in the story is describing clock-wise information, then 12 denotes above, 1 and 2 denote upper-right, 3 denotes right, 4 and 5 denote lower-right, 6 denotes below, 7 and 8 denote lower-left, 9 denote left, 10 and 11 denote upper-left. If the sentence is describing cardinal directions, then north denotes above, east denotes right, south denotes below, and west denotes left.
+
+Story:
+The object labeled Y is positioned to the left of the object labeled G.
+Z is at the bottom of B.
+B is above K with a small gap between them.
+N is at the 9 o'clock position relative to Z.
+F is to the left of K and is on the same horizontal plane.
+Y presents right to N.
+What is the relation of the agent Y to the agent B?
+Answer: below
+
+Story:
+D presents upper left to J.
+Y is placed at the lower right of H.
+H is above Z at 2 o'clock.
+G is lower right of D.
+X is diagonally to the upper left of Y.
+X is diagonally left and below G.
+What is the relation of the agent D to the agent X?
+Answer: above
+
+Story:
+B is placed in the left direction of X.
+W is to the left of J and is on the same horizontal plane.
+A is on the right side and below J.
+W is positioned above X and to the left.
+B is over there and I is on the left.
+Z and I are both there with the object I below the object Z.
+What is the relation of the agent X to the agent B?
+Answer: right
+
+Story:
+Z is to the left of P and below P at approximately a 45 degree angle.
+M is to the left of C horizontally.
+P is upper right to Y.
+Y is to the left of T and is on the same horizontal plane.
+Object R is below object Z and to the left of it, too.
+M and T are in a horizontal line with T on the right.
+What is the relation of the agent T to the agent P?
+Answer: below
+
+Story:
+If S is the center of a clock face, A is located between 4 and 5.
+The object labeled M is positioned to the left of the object labeled Q.
+P is at a 45 degree angle to Q, in the lower lefthand corner.
+J is positioned below and to the right of A.
+M is upper right to J.
+Y and S are in a vertical line with Y on top.
+What is the relation of the agent P to the agent Y?
+Answer: lower-right
+
+Story:
+[INPUT]
+Answer:

@@ -1,0 +1,89 @@
+Given a story about spatial relations among objects, answer the relation between two queried objects. Possible relations are: overlap, above, below, left, right, upper-left, upper-right, lower-left, and lower-right. If a sentence in the story is describing clock-wise information, then 12 denotes above, 1 and 2 denote upper-right, 3 denotes right, 4 and 5 denote lower-right, 6 denotes below, 7 and 8 denote lower-left, 9 denote left, 10 and 11 denote upper-left. If the sentence is describing cardinal directions, then north denotes above, east denotes right, south denotes below, and west denotes left. In all the spatial relations, assume that all agents occupy a position on a grid point of equally spaced points in the vertical and horizontal directions and that agents occupy the nearest grid point consistent with the spatial relation. The offsets of 9 spacial relations: offset(overlap) = (0,0); offset(above) = (0,1); offset(below) = (0,-1); offset(left) = (-1,0); offset(right) = (1,0); offset(upper-left) = (-1,1); offset(upper-right) = (1,1); offset(lower-left) = (-1,-1); offset(lower-right) = (1,-1).
+
+
+Story:
+1. The object labeled Y is positioned to the left of the object labeled G.
+2. Z is at the bottom of B.
+3. B is above K with a small gap between them.
+4. N is at the 9 o'clock position relative to Z.
+5. F is to the left of K and is on the same horizontal plane.
+6. Y presents right to N.
+What is the relation of the agent Y to the agent B?
+Reasoning:
+Let's suppose Y is at (0,0). We can connect Y and B using the relations given in the story.
+Start with Y. According to 6, "Y presents right to N." This means N is to the left of Y. N= Y+ offset(left) = (0,0)+(-1,0)=(-1,0). Therefore, N is at (-1,0).
+Then search for N. According to 4, "N is at the 9 o'clock position relative to Z." Considering the clock-wise information, 9 position denotes the left direction. Z= N+ offset(right) = (-1,0)+(1,0)=(0,0). Therefore, Z is at (0,0).
+Then search for Z. According to 2, "Z is at the bottom of B." This means B is above Z. B= Z+ offset(above) = (0,0)+(0,1)=(0,1). Therefore, B is at (0,1).
+We've reached B. So, considering Y(0,0) and B(0,1), Y is below B.
+Answer: below
+
+
+Story:
+1. D presents upper left to J.
+2. Y is placed at the lower right of H.
+3. H is above Z at 2 o'clock.
+4. G is lower right of D.
+5. X is diagonally to the upper left of Y.
+6. X is diagonally left and below G.
+What is the relation of the agent D to the agent X?
+Reasoning:
+Let's suppose D is at (0,0). We can connect D and X using the relations given in the story.
+Start with D. According to 4, "G is lower right of D." This means G is to the lower-right of D. G= D+ offset(lower-right) = (0,0)+(1,-1)=(1,-1). Therefore, G is at (1,-1).
+Then search for G. According to 6, "X is diagonally left and below G." This means X is to the lower-left of G. X= G+ offset(lower-left) = (1,-1)+(-1,-1)=(0,-2). Therefore, X is at (0,-2).
+We've reached X. So, considering D(0,0) and X(0,-2), D is above X.
+Answer: above
+
+
+Story:
+1. B is placed in the left direction of X.
+2. W is to the left of J and is on the same horizontal plane.
+3. A is on the right side and below J.
+4. W is positioned above X and to the left.
+5. B is over there and I is on the left.
+6. Z and I are both there with the object I below the object Z.
+What is the relation of the agent X to the agent B?
+Reasoning:
+Let's suppose X is at (0,0). We can connect X and B using the relations given in the story.
+Start with X. According to 1, "B is placed in the left direction of X." This means B is to the left of X. B= X+ offset(left) = (0,0)+(-1,0)=(-1,0). Therefore, B is at (-1,0).
+We've reached B. So, considering X(0,0) and B(-1,0), X is to the right of B.
+Answer: right
+
+
+Story:
+1. Z is to the left of P and below P at approximately a 45 degree angle.
+2. M is to the left of C horizontally.
+3. P is upper right to Y.
+4. Y is to the left of T and is on the same horizontal plane.
+5. Object R is below object Z and to the left of it, too.
+6. M and T are in a horizontal line with T on the right.
+What is the relation of the agent T to the agent P?
+Reasoning:
+Let's suppose T is at (0,0). We can connect T and P using the relations given in the story.
+Start with T. According to 4, "Y is to the left of T and is on the same horizontal plane." This means Y is to the left of T. Y= T+ offset(left) = (0,0)+(-1,0)=(-1,0). Therefore, Y is at (-1,0).
+Then search for Y. According to 3, "P is upper right to Y." This means P is to the upper-right of Y. P= Y+ offset(upper-right) = (-1,0)+(1,1)=(0,1). Therefore, P is at (0,1).
+We've reached P. So, considering T(0,0) and P(0,1), T is below P.
+Answer: below
+
+ 
+Story:
+1. If S is the center of a clock face, A is located between 4 and 5.
+2. The object labeled M is positioned to the left of the object labeled Q.
+3. P is at a 45 degree angle to Q, in the lower lefthand corner.
+4. J is positioned below and to the right of A.
+5. M is upper right to J.
+6. Y and S are in a vertical line with Y on top.
+What is the relation of the agent P to the agent Y?
+Reasoning:
+Let's suppose P is at (0,0). We can connect P and Y using the relations given in the story.
+Start with P. According to 3, "P is at a 45 degree angle to Q, in the lower lefthand corner." This means Q is to the upper-right of P. Q= P+ offset(upper-right) = (0,0)+(1,1)=(1,1). Therefore, Q is at (1,1).
+Then search for Q. According to 2, "The object labeled M is positioned to the left of the object labeled Q." This means M is to the left of Q. M= Q+ offset(left) = (1,1)+(-1,0)=(0,1). Therefore, M is at (0,1).
+Then search for M. According to 5, "M is upper right to J." This means J is to the lower-left of M. J= M+ offset(lower-left) = (0,1)+(-1,-1)=(-1,0). Therefore, J is at (-1,0).
+Then search for J. According to 4, "J is positioned below and to the right of A." This means A is to the upper-left of J. A= J+ offset(upper-left) = (-1,0)+(-1,1)=(-2,1). Therefore, A is at (-2,1).
+Then search for A. According to 1, "If S is the center of a clock face, A is located between 4 and 5." Considering the clock-wise information, the position between 4 and 5 denotes the lower-right direction. This means S is to the upper-left of A. S= A+ offset(upper-left) = (-2,1)+(-1,1)=(-3,2). Therefore, S is at (-3,2).
+Then search for S. According to 6, "Y and S are in a vertical line with Y on top." This means Y is above S. Y= S+ offset(above) = (-3,2)+(0,1)=(-3,3). Therefore, Y is at (-3,3).
+We've reached Y. So, considering P(0,0) and Y(-3,3), P is to the lower-right of Y.
+Answer: lower-right
+
+
+Story:
+[INPUT]

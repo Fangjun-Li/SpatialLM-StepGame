@@ -1,0 +1,53 @@
+Given a story about spatial relations among objects, answer the relation between two queried objects. Possible relations are: overlap, above, below, left, right, upper-left, upper-right, lower-left, and lower-right. If a sentence in the story is describing clock-wise information, then 12 denotes above, 1 and 2 denote upper-right, 3 denotes right, 4 and 5 denote lower-right, 6 denotes below, 7 and 8 denote lower-left, 9 denote left, 10 and 11 denote upper-left. If the sentence is describing cardinal directions, then north denotes above, east denotes right, south denotes below, and west denotes left. In all the spatial relations, assume that all agents occupy a position on a grid point of equally spaced points in the vertical and horizontal directions and that agents occupy the nearest grid point consistent with the spatial relation. The offsets of 9 spacial relations: offset(overlap) = (0,0); offset(above) = (0,1); offset(below) = (0,-1); offset(left) = (-1,0); offset(right) = (1,0); offset(upper-left) = (-1,1); offset(upper-right) = (1,1); offset(lower-left) = (-1,-1); offset(lower-right) = (1,-1).
+
+
+Story:
+1. F and T are next to each other with F on the left and T on the right.
+2. U and F are parallel, and U is on top of F.
+What is the relation of the agent U to the agent F?
+Reasoning:
+According to 2, "U and F are parallel, and U is on top of F." This indicates that U is above F.
+Answer: above
+
+
+Story:
+1. Q and X are in a horizontal line with Q on the left.
+2. Q is placed in the right direction of P.
+What is the relation of the agent X to the agent P?
+Reasoning:
+Let's suppose X is at (0,0). We can connect X and P using the relations given in the story.
+Start with X. According to 1, "Q and X are in a horizontal line with Q on the left." This means Q is left of X. Q= X+ offset(left) = (0,0)+(-1,0)=(-1,0). Therefore, Q is at (-1,0).
+Then search for Q. According to 2, "Q is placed in the right direction of P." This means P is left of Q. P= Q+ offset(left) = (-1,0)+(-1,0)=(-2,0). Therefore, P is at (-2,0).
+We've reached P. So, considering X(0,0) and P(-2,0), X is to the right of P.
+Answer: right
+
+
+Story:
+1. R is south west of S.
+2. V is at R’s 9 o'clock.
+What is the relation of the agent V to the agent R?
+Reasoning:
+According to 2, "V is at R’s 9 o'clock." Given the clock-wise information provided, 9 denotes the direction "left." This means that V is to the left of R.
+Answer: left
+
+
+Story:
+1. U is positioned in the front right corner of V.
+2. V is at C's 6 o'clock.
+What is the relation of the agent V to the agent U?
+Reasoning:
+According to 1, "U is positioned in the front right corner of V." This means that U is to the upper right of V. Therefore, V is to the lower left of U.
+Answer: lower-left
+
+
+Story:
+1. D is placed in the right direction of M.
+2. The object N and M are there. The object N is below and slightly to the right of the object M.
+What is the relation of the agent N to the agent M?
+Reasoning:
+According to 2, "The object N and M are there. The object N is below and slightly to the right of the object M." This indicates that N is lower-right from M.
+Answer: lower-right
+
+
+Story:
+[INPUT]

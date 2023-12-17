@@ -1,0 +1,75 @@
+Given a story about spatial relations among objects, answer the relation between two queried objects. Possible relations are: overlap, above, below, left, right, upper-left, upper-right, lower-left, and lower-right. If a sentence in the story is describing clock-wise information, then 12 denotes above, 1 and 2 denote upper-right, 3 denotes right, 4 and 5 denote lower-right, 6 denotes below, 7 and 8 denote lower-left, 9 denote left, 10 and 11 denote upper-left. If the sentence is describing cardinal directions, then north denotes above, east denotes right, south denotes below, and west denotes left.
+
+Story:
+B is at Z's 12 o'clock.
+Y is on the top and W is at the bottom.
+H is sitting in the left direction of Q.
+Z is under H.
+A is at the 3 o'clock position relative to X.
+W is over there with J above.
+N is to the right of M and is on the same horizontal plane.
+B is placed at the lower right of Y.
+If A is the center of a clock face, M is located between 2 and 3.
+X is to the right of Q horizontally.
+What is the relation of the agent J to the agent Y?
+Answer: overlap
+
+Story:
+G and D are side by side with G on the top and D at the bottom.
+J is below and to the left of F.
+D is on the upper right of E.
+H is above and to the right of R.
+J is diagonally right and below O.
+G is over there and B is at the bottom of it.
+R is on the lower left of C.
+C is below V.
+E and V are horizontal and E is to the left of V.
+F is diagonally right and below B.
+What is the relation of the agent B to the agent D?
+Answer: overlap
+
+Story:
+C is above R with a small gap between them.
+The objects L and Q are over there. The object L is lower and slightly to the left of the object Q.
+C is to the upper left of J.
+J is to the right of E.
+T and A are next to each other with T on the top and A at the bottom.
+G is lower right of N.
+G is south east of A.
+L is slightly off center to the top left and Y is slightly off center to the bottom right.
+R is to the top right of Q.
+If Y is the center of a clock face, T is located between 7 and 8.
+What is the relation of the agent G to the agent Q?
+Answer: below
+
+Story:
+L is to the left of Y and is on the same horizontal plane.
+T is on the right side to P.
+H is to the left of K with a small gap between them.
+W is placed at the lower right of J.
+S is on top of J.
+Object Z is above object D and to the left of it, too.
+The object D is lower and slightly to the left of the object T.
+If Y is the center of a clock face, H is located between 4 and 5.
+S is diagonally above L to the right at a 45 degree.
+P is at the lower side of W.
+What is the relation of the agent Y to the agent D?
+Answer: upper-left
+
+Story:
+Q is sitting at the lower left position to U.
+Z is diagonally to the bottom right of S.
+F is directly south east of Y.
+S is placed in the right direction of C.
+R is at a 45 degree angle to Z, in the upper lefthand corner.
+O is at a 45 degree angle to R, in the upper righthand corner.
+A is at the 12 o'clock position relative to U.
+O is to the right of Q.
+If F is the center of a clock face, B is located between 4 and 5.
+C is diagonally right and below Y.
+What is the relation of the agent U to the agent F?
+Answer: upper-right
+
+Story:
+[INPUT]
+Answer:
