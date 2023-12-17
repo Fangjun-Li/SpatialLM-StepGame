@@ -81,7 +81,7 @@ python separate_prompt.py --prompt_type our_CoT_5shot --kstart 2 --kend 11
 ### ToT
 
 ```shell
-python ToT_CoT.py --prompt_type our_CoT_5shot --kstart 2 --kend 11 
+python ToT_CoT.py --prompt_type our_CoT_5shot --kstart 3 --kend 11 
 ```
 --path_mistakes: This argument is to set the path to store mistakes file.
 
