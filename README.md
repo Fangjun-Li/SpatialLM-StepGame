@@ -98,11 +98,13 @@ If you wish to execute the reasoning chain-building process on additional exampl
 
 Set up the new task class: place 'SpatialLM-StepGame/ToT/src/tot/stepgame.py' and 'SpatialLM-StepGame/ToT/src/tot/__init__.py' into the directory '/tree-of-thought-llm/src/tot/tasks/'
 
+Set up task-specific bfs: place 'SpatialLM-StepGame/ToT/src/tot/bfs.py' in the directory '/tree-of-thought-llm/src/tot/methods/'.
+
 Set up task-specific prompts: place 'SpatialLM-StepGame/ToT/src/prompts/stepgame.py' in the directory '/tree-of-thought-llm/src/tot/prompts/'. 
 
 Data: Copy all data files  in 'SpatialLM-StepGame/data/correct_clean/' to '/tree-of-thought-llm/src/tot/data/stepgame/correct_clean/'
 
-
+(FYI: need to set the API Key in the file  /tree-of-thought-llm/src/tot/models.py)
 
 3. place 'SpatialLM-StepGame/ToT/run_stepgame.oy' in the directory '/tree-of-thought-llm/' and execute it using the following command: 
 ```shell
