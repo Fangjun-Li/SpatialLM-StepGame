@@ -1,6 +1,6 @@
 # SpatialLM-StepGame
 This repository contains code and data related to the AAAI-24 paper [Advancing Spatial Reasoning in Large Language Models: An In-depth Evaluation and Enhancement Using the StepGame Benchmark](https://arxiv.org/abs/2401.03991).
-![Visual Abstract of Paper](https://github.com/Fangjun-Li/SpatialLM-StepGame/blob/main/poster.jpg)
+
 
 
 
@@ -108,6 +108,8 @@ Data: Copy all data files  in 'SpatialLM-StepGame/data/correct_clean/' to '/tree
 
 3. place 'SpatialLM-StepGame/ToT/run_stepgame.oy' in the directory '/tree-of-thought-llm/' and execute it using the following command: 
 ```shell
+
+![Visual Abstract of Paper](https://github.com/Fangjun-Li/SpatialLM-StepGame/blob/main/poster.jpg)
 python run_stepgame.py
 ```
 --task: For our StepGame task, this argument specifies the configuration of the input data file in the format 'stepgame_k', where 'k' represents the number of hops. (The default value is 'stepgame_3').
